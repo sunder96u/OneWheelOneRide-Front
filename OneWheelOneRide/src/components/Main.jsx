@@ -13,18 +13,22 @@ import Trails from './Trails'
 
 
 export default function Main () {
+    const [Model, setModel] = useState('XR')
+
+
+
     return (
-        <>
-        <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/Category" element={<Category />} />
-            <Route path="/Group/:<id>" element={<Group />} />
-            <Route path="/Groups" element={<Groups />} />
-            <Route path="/Parts" element={<Parts />} />
-            <Route path="/Product/:<id>" element={<Product />} />
-            <Route path="/Trail/:<id>" element={<Trail />} />
-            <Route path="/Trails" element={<Trails />} />
-        </Routes>
-      </>
+        <div className="container-fluid main">
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/Category" element={<Category />} />
+                <Route path="/Group/:id" element={<Group />} />
+                <Route path="/Groups" element={<Groups />} />
+                <Route path="/Parts/:name" element={<Parts model={Model} />} />
+                <Route path="/Product/:id" element={<Product />} />
+                <Route path="/Trail/:id" element={<Trail />} />
+                <Route path="/Trails" element={<Trails />} />
+            </Routes>
+        </div>
     )
 }
