@@ -29,9 +29,35 @@
     background-color: #242424;
   }
 
+  .main {
+    position: relative;
+    top: 100px;
+  }
+
   .navbar {
     position: fixed;
     top: 0;
     background-image: linear-gradient(to bottom, #291347, #261940, #241e37, #24212e, #242424);
     color: rgba(255, 255, 255, 0.87);
+  }
+
+  .icon {
+    max-width: 125px;
+    max-height: 125px;
+  }
+
+  .iconLrg {
+    max-width: 275px;
+    max-height: 275px;
+  }
+
+  .cardHeight {
+    height: 225px;
+    background-color: lightgray;
+  }
+
+  .cardDescription {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }

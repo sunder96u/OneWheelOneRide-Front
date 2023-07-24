@@ -27,9 +27,9 @@ export default function Header () {
                             Shop
                         </Link>
                         <ul className="dropdown-menu">
-                            <li><Link className="dropdown-item" to="#">Onewheel+ XR</Link></li>
-                            <li><Link className="dropdown-item" to="#">Onewheel GT</Link></li>
-                            <li><Link className="dropdown-item" to="#">Onewheel Pint/PintX</Link></li>
+                            <li><Link className="dropdown-item" to="/Parts/XR">Onewheel+ XR</Link></li>
+                            <li><Link className="dropdown-item" to="/Parts/GT">Onewheel GT</Link></li>
+                            <li><Link className="dropdown-item" to="/Parts/Pint">Onewheel Pint/PintX</Link></li>
                         </ul>
                     </li>
                     <li>
