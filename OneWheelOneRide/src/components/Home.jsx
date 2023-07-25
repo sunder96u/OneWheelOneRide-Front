@@ -12,7 +12,7 @@ export default function Home () {
                         <div className="card-body">
                             <h5 className="card-title">Shop Onewheel+ XR Parts</h5>
                             <p>Search our large selections of Onewheel+ XR parts and accessories</p>
-                            <Link to="/Parts/XR" className="btn btn-primary">Learn More</Link>
+                            <Link to="/Parts/2" className="btn btn-info">Shop Now</Link>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ export default function Home () {
                         <div className="card-body">
                             <h5 className="card-title">Shop Onewheel GT Parts</h5>
                             <p>Search our large selections of Onewheel GT parts and accessories</p>
-                            <Link to="/Parts/GT" className="btn btn-primary">Learn More</Link>
+                            <Link to="/Parts/1" className="btn btn-info">Shop Now</Link>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ export default function Home () {
                         <div className="card-body">
                             <h5 className="card-title">Shop Onewheel Pint/PintX Parts</h5>
                             <p>Search our large selections of Onewheel Pint/PintX parts and accessories</p>
-                            <Link to="/Parts/Pint" className="btn btn-primary">Learn More</Link>
+                            <Link to="/Parts/3" className="btn btn-info">Shop Now</Link>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ export default function Home () {
                         <div className="card-body">
                             <h5 className="card-title">Find Local Groups</h5>
                             <p>Find a local group to float with!</p>
-                            <Link to="/Groups" className="btn btn-primary">Learn More</Link>
+                            <Link to="/Groups" className="btn btn-warning">Find Groups</Link>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ export default function Home () {
                         <div className="card-body">
                             <h5 className="card-title">Find Local Trails</h5>
                             <p>Find a local trail to enjoy</p>
-                            <Link to="/Trails" className="btn btn-primary">Learn More</Link>
+                            <Link to="/Trails" className="btn btn-warning">Find Trails</Link>
                         </div>
                     </div>
                 </div>

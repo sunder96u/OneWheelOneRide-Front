@@ -7,14 +7,15 @@ import axios from 'axios'
 
 
 export default function Parts () {
-    const [Category, setCategory] = useState("")
-    const [Parts, setParts] = useState([])
+    const [category, setCategory] = useState("")
+    const [models, setModel] = useState(4)
+    const [parts, setParts] = useState([])
     let navigate = useNavigate()
     let model = useParams()
     console.log(model)
 
     useEffect(() => {
-        const getParts = async(e) => {
+        const getParts = async (e) => {
             const response = await axios.get(`https://onewheeloneride-back.up.railway.app/products`)
             setParts(response.data)
         }
@@ -25,40 +26,26 @@ export default function Parts () {
     let header2
     let myParts
 
-    // categories = [
-    //     fender - 1
-    //     handle - 2
-    //     footpad - 3
-    //     tire - 4
-    //     rail - 5
-    //     bumper - 6
-    //     stand - 7
-    // ]
+    console.log(models)
 
-    // model = [
-    //     gt - 1
-    //     xr - 2
-    //     pint - 3
-    // ]
-
-    if (model.name === "XR") {
+    if (model.name === '2') {
         header1 = 
             <h1>XR Parts Categories</h1>
-    } else if (model.name === "GT") {
+    } else if (model.name === '1') {
         header1 = 
             <h1>GT Parts Categories</h1>
-    } else if (model.name === "Pint") {
+    } else if (model.name === '3') {
         header1 = 
             <h1>Pint/PintX Parts Categories</h1>
     }
 
-    if (Category === "tires") {
+    if (category === "tires") {
         header2 = 
             <h1>Tires</h1>
         myParts = 
             <div className="row">
-                {Parts.map((parts, index) => {
-                    if (parts.id % 2 === 0) {
+                {parts.map((parts, index) => {
+                    if (parts.category_id.id === 4 && (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4)) {
                         return ( 
                         <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
                             <div className="card mb-3">
@@ -73,125 +60,153 @@ export default function Parts () {
                     }
                 })}
             </div>
-    } else if (Category === "fenders") {
+    } else if (category === "fenders") {
         header2 = 
             <h1>Fenders</h1>
         myParts = 
             <div className="row">
-                {Parts.map((parts, index) => 
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                        <div className="card mb-3">
-                            <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
-                            <h5 className="card-title">{parts.name}</h5>
-                            <h5>${parts.price}</h5>
-                            <p className="cardDescription">{parts.description}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                {parts.map((parts, index) => {
+                    if (parts.category_id.id === 1 && (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4)) {
+                        return ( 
+                        <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                            <div className="card mb-3">
+                                <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
+                                <h5 className="card-title">{parts.name}</h5>
+                                <h5>${parts.price}</h5>
+                                <p className="cardDescription">{parts.description}</p>
+                                <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                        )
+                    }
+                })}
             </div>
-    } else if (Category === "rails") {
+    } else if (category === "rails") {
         header2 =
             <h1>Rails</h1>
         myParts = 
             <div className="row">
-                {Parts.map((parts, index) => 
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                        <div className="card mb-3">
-                            <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
-                            <h5 className="card-title">{parts.name}</h5>
-                            <h5>${parts.price}</h5>
-                            <p className="cardDescription">{parts.description}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                {parts.map((parts, index) => {
+                    if (parts.category_id.id === 5 && (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4)) {
+                        return ( 
+                        <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                            <div className="card mb-3">
+                                <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
+                                <h5 className="card-title">{parts.name}</h5>
+                                <h5>${parts.price}</h5>
+                                <p className="cardDescription">{parts.description}</p>
+                                <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                        )
+                    }
+                })}
             </div>
-    } else if (Category === "footpads") {
+    } else if (category === "footpads") {
         header2 =
             <h1>Footpads</h1>
         myParts = 
             <div className="row">
-                {Parts.map((parts, index) => 
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                        <div className="card mb-3">
-                            <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
-                            <h5 className="card-title">{parts.name}</h5>
-                            <h5>${parts.price}</h5>
-                            <p className="cardDescription">{parts.description}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                {parts.map((parts, index) => {
+                    if (parts.category_id.id === 3 && (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4)) {
+                        return ( 
+                        <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                            <div className="card mb-3">
+                                <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
+                                <h5 className="card-title">{parts.name}</h5>
+                                <h5>${parts.price}</h5>
+                                <p className="cardDescription">{parts.description}</p>
+                                <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                        )
+                    }
+                })}
             </div>
-    } else if (Category === "bumpers") {
+    } else if (category === "bumpers") {
         header2 =
             <h1>Bumpers</h1>
         myParts = 
             <div className="row">
-                {Parts.map((parts, index) => 
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                        <div className="card mb-3">
-                            <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
-                            <h5 className="card-title">{parts.name}</h5>
-                            <h5>${parts.price}</h5>
-                            <p className="cardDescription">{parts.description}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                {parts.map((parts, index) => {
+                    if (parts.category_id.id === 6 && (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4)) {
+                        return ( 
+                        <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                            <div className="card mb-3">
+                                <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
+                                <h5 className="card-title">{parts.name}</h5>
+                                <h5>${parts.price}</h5>
+                                <p className="cardDescription">{parts.description}</p>
+                                <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                        )
+                    }
+                })}
             </div>
-    } else if (Category === "handles") {
+    } else if (category === "handles") {
         header2 = 
             <h1>Handles</h1>
         myParts = 
             <div className="row">
-                {Parts.map((parts, index) => 
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                        <div className="card mb-3">
-                            <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
-                            <h5 className="card-title">{parts.name}</h5>
-                            <h5>${parts.price}</h5>
-                            <p className="cardDescription">{parts.description}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                {parts.map((parts, index) => {
+                    if (parts.category_id.id === 2 && (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4)) {
+                        return ( 
+                        <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                            <div className="card mb-3">
+                                <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
+                                <h5 className="card-title">{parts.name}</h5>
+                                <h5>${parts.price}</h5>
+                                <p className="cardDescription">{parts.description}</p>
+                                <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                        )
+                    }
+                })}
             </div>
-    } else if (Category === "stands") {
+    } else if (category === "stands") {
         header2 = 
             <h1>Stands</h1>
         myParts = 
             <div className="row">
-                {Parts.map((parts, index) => 
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                        <div className="card mb-3">
-                            <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
-                            <h5 className="card-title">{parts.name}</h5>
-                            <h5>${parts.price}</h5>
-                            <p className="cardDescription">{parts.description}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                {parts.map((parts, index) => {
+                    if (parts.category_id.id === 7 && (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4)) {
+                        return ( 
+                        <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                            <div className="card mb-3">
+                                <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
+                                <h5 className="card-title">{parts.name}</h5>
+                                <h5>${parts.price}</h5>
+                                <p className="cardDescription">{parts.description}</p>
+                                <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                        )
+                    }
+                })}
             </div>
     } else {
         header2 =
             <h1>All Parts</h1>
         myParts = 
-            <div className="row">
-                {Parts.map((parts, index) => 
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
-                        <div className="card mb-3">
-                            <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
-                            <h5 className="card-title">{parts.name}</h5>
-                            <h5>${parts.price}</h5>
-                            <p className="cardDescription">{parts.description}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
-                        </div>
+        <div className="row">
+        {parts.map((parts, index) => {
+            if (parseInt(model.name) === parts.model_id.id || parts.model_id.id === 4) {
+                return ( 
+                <div className="col-lg-4 col-md-6 col-sm-6" key={index}>
+                    <div className="card mb-3">
+                        <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
+                        <h5 className="card-title">{parts.name}</h5>
+                        <h5>${parts.price}</h5>
+                        <p className="cardDescription">{parts.description}</p>
+                        <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                     </div>
-                )}
-            </div>
+                </div>
+                )
+            }
+        })}
+    </div>
     }
 
     const details = (id) => {
@@ -199,7 +214,6 @@ export default function Parts () {
         navigate(`/Product/${id}`)
     }
 
-    console.log(Parts)
     return (
         <div className="container-fluid">
             <div className="row">
