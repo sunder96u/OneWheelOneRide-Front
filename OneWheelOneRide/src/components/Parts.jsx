@@ -12,7 +12,6 @@ export default function Parts () {
     const [parts, setParts] = useState([])
     let navigate = useNavigate()
     let model = useParams()
-    console.log(model)
 
     useEffect(() => {
         const getParts = async (e) => {
@@ -25,8 +24,6 @@ export default function Parts () {
     let header1
     let header2
     let myParts
-
-    console.log(models)
 
     if (model.name === '2') {
         header1 = 
@@ -210,7 +207,6 @@ export default function Parts () {
     }
 
     const details = (id) => {
-        console.log(id)
         navigate(`/Product/${id}`)
     }
 
