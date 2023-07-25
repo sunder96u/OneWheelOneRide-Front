@@ -10,6 +10,7 @@ import Trail from './Trail'
 import Trails from './Trails'
 import Login from './Login'
 import CreateAccount from './CreateAccount'
+import Cart from './Cart'
 
 
 
@@ -21,6 +22,7 @@ export default function Main () {
 
     return (
         <div className="container-fluid main">
+            <Cart />
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/Login" element={<Login />} />
@@ -33,6 +35,7 @@ export default function Main () {
                 <Route path="/Trail/:id" element={<Trail />} />
                 <Route path="/Trails" element={<Trails />} />
             </Routes>
+            
         </div>
     )
 }

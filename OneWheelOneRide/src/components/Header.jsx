@@ -3,6 +3,8 @@
 import { Link } from 'react-router-dom'
 
 export default function Header () {
+
+
     return (
         <nav className="navbar sticky-top navbar-expand-lg white">
             <div className="container-fluid">
@@ -25,16 +27,16 @@ export default function Header () {
                     <li className="nav-item dropdown">
                         <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</Link>
                         <ul className="dropdown-menu">
-                            <li><Link className="dropdown-item" to="/Parts/XR">Onewheel+ XR</Link></li>
-                            <li><Link className="dropdown-item" to="/Parts/GT">Onewheel GT</Link></li>
-                            <li><Link className="dropdown-item" to="/Parts/Pint">Onewheel Pint/PintX</Link></li>
+                            <li><Link className="dropdown-item" to="/Parts/2">Onewheel+ XR</Link></li>
+                            <li><Link className="dropdown-item" to="/Parts/1">Onewheel GT</Link></li>
+                            <li><Link className="dropdown-item" to="/Parts/3">Onewheel Pint/PintX</Link></li>
                         </ul>
                     </li>
                     <li>
                         <button>Log-in</button>
                     </li>
                     <li>
-                        <button>Cart</button>
+                        <button className="btn btn-primary" type="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">Cart</button>
                     </li>
                 </ul>
             </div>

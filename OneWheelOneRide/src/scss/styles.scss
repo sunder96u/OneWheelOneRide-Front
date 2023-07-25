@@ -41,6 +41,14 @@
     color: rgba(255, 255, 255, 0.87);
   }
 
+  .navbar-brand {
+      color: rgba(255, 255, 255, 0.87);
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.87)
+  }
+
   .icon {
     max-width: 125px;
     max-height: 125px;
@@ -60,4 +68,17 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .bcgrey {
+    background-color: lightgray;
+    padding: 15px;
+  }
+
+  .space {
+    margin: 10px;
+  }
+
+  .line {
+    border-bottom: darkgrey solid 1px;
   }
