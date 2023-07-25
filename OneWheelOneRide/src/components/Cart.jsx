@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import Context from '../Context'
-import { useCookies } from 'react-cookie'
+
 
 
 
@@ -8,8 +8,6 @@ export default function Cart () {
 
     const { cart, setCartInfo } = useContext(Context)
     const [ cartTotal, setCartTotal ] = useState('')
-    const [cookies, setCookies ] = useCookies('cart')
-    console.log(cookies)
 
     const increaseQuantity = (id) => {
         if (cart.find(item => id === item.id)) {
