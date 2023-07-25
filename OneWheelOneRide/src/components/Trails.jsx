@@ -13,7 +13,6 @@ export default function Trails () {
         const getTrails = async () => {
             const response = await axios.get('https://onewheeloneride-back.up.railway.app/trails')
             setTrails(response.data)
-            console.log(response)
         }
         getTrails()
     }, [])

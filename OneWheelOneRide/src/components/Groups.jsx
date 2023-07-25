@@ -13,7 +13,6 @@ export default function Groups () {
         const getGroups = async () => {
             const response = await axios.get('https://onewheeloneride-back.up.railway.app/groups')
             setGroups(response.data)
-            console.log(response)
         }
         getGroups()
     }, [])
