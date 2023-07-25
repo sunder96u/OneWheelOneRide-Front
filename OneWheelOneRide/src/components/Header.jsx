@@ -6,8 +6,8 @@ export default function Header () {
     return (
         <nav className="navbar sticky-top navbar-expand-lg white">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">OneWheelOneRide</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <Link className="navbar-brand" to="/">OneWheel OneRide</Link>
+                <button className="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -23,9 +23,7 @@ export default function Header () {
                         <Link className="nav-link" aria-current="page" to="/Groups">Groups</Link>
                     </li>
                     <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Shop
-                        </Link>
+                        <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</Link>
                         <ul className="dropdown-menu">
                             <li><Link className="dropdown-item" to="/Parts/XR">Onewheel+ XR</Link></li>
                             <li><Link className="dropdown-item" to="/Parts/GT">Onewheel GT</Link></li>

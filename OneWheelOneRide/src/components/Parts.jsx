@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 export default function Parts () {
-    const [Category, setCategory] = useState("tires")
+    const [Category, setCategory] = useState("")
     const [Parts, setParts] = useState([])
     let navigate = useNavigate()
     let model = useParams()
@@ -24,6 +24,22 @@ export default function Parts () {
     let header1
     let header2
     let myParts
+
+    // categories = [
+    //     fender - 1
+    //     handle - 2
+    //     footpad - 3
+    //     tire - 4
+    //     rail - 5
+    //     bumper - 6
+    //     stand - 7
+    // ]
+
+    // model = [
+    //     gt - 1
+    //     xr - 2
+    //     pint - 3
+    // ]
 
     if (model.name === "XR") {
         header1 = 
@@ -48,6 +64,7 @@ export default function Parts () {
                             <div className="card mb-3">
                                 <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                                 <h5 className="card-title">{parts.name}</h5>
+                                <h5>${parts.price}</h5>
                                 <p className="cardDescription">{parts.description}</p>
                                 <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                             </div>
@@ -66,6 +83,7 @@ export default function Parts () {
                         <div className="card mb-3">
                             <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                             <h5 className="card-title">{parts.name}</h5>
+                            <h5>${parts.price}</h5>
                             <p className="cardDescription">{parts.description}</p>
                             <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                         </div>
@@ -82,6 +100,7 @@ export default function Parts () {
                         <div className="card mb-3">
                             <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                             <h5 className="card-title">{parts.name}</h5>
+                            <h5>${parts.price}</h5>
                             <p className="cardDescription">{parts.description}</p>
                             <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                         </div>
@@ -98,6 +117,7 @@ export default function Parts () {
                         <div className="card mb-3">
                             <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                             <h5 className="card-title">{parts.name}</h5>
+                            <h5>${parts.price}</h5>
                             <p className="cardDescription">{parts.description}</p>
                             <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                         </div>
@@ -114,6 +134,7 @@ export default function Parts () {
                         <div className="card mb-3">
                             <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                             <h5 className="card-title">{parts.name}</h5>
+                            <h5>${parts.price}</h5>
                             <p className="cardDescription">{parts.description}</p>
                             <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                         </div>
@@ -130,6 +151,7 @@ export default function Parts () {
                         <div className="card mb-3">
                             <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                             <h5 className="card-title">{parts.name}</h5>
+                            <h5>${parts.price}</h5>
                             <p className="cardDescription">{parts.description}</p>
                             <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                         </div>
@@ -146,6 +168,7 @@ export default function Parts () {
                         <div className="card mb-3">
                             <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                             <h5 className="card-title">{parts.name}</h5>
+                            <h5>${parts.price}</h5>
                             <p className="cardDescription">{parts.description}</p>
                             <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                         </div>
@@ -162,6 +185,7 @@ export default function Parts () {
                         <div className="card mb-3">
                             <img src={parts.picture} className="card-img-top iconLrg" alt={parts.name}/>
                             <h5 className="card-title">{parts.name}</h5>
+                            <h5>${parts.price}</h5>
                             <p className="cardDescription">{parts.description}</p>
                             <button type="button" className="btn btn-primary" onClick={() => details(parts.id)}>View More</button>
                         </div>

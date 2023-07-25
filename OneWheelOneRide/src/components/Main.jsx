@@ -8,6 +8,8 @@ import Parts from './Parts'
 import Product from './Product'
 import Trail from './Trail'
 import Trails from './Trails'
+import Login from './Login'
+import CreateAccount from './CreateAccount'
 
 
 
@@ -21,6 +23,8 @@ export default function Main () {
         <div className="container-fluid main">
             <Routes>
                 <Route path="/" element={<Home />}/>
+                <Route path="/Login" element={<Login />} />
+                <Route path="/CreateAccount" element={<CreateAccount />} />
                 <Route path="/Category" element={<Category />} />
                 <Route path="/Group/:id" element={<Group />} />
                 <Route path="/Groups" element={<Groups />} />
