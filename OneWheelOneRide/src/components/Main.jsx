@@ -29,6 +29,7 @@ export default function Main () {
             <Cart />
             <Routes>
                 <Route path="/" element={<Home />}/>
+                <Route path="/OneWheelOneRide-Front" element={<Home />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/CreateAccount" element={<CreateAccount />} />
                 <Route path="/Category" element={<Category />} />
