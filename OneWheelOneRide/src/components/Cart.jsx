@@ -7,25 +7,36 @@ import Context from '../Context'
 export default function Cart () {
 
     const { cart, setCartInfo } = useContext(Context)
-    const [ cartTotal, setCartTotal ] = useState('')
+    const { user, setUserInfo } = useContext(Context)
+    const [total, setTotal] = useState(0)
+    
+    useEffect(() => {
+        if(localStorage.getItem('cart')){
+            setCartInfo(JSON.parse(localStorage.getItem('cart')))
+        }
+    }, [])
 
     const increaseQuantity = (id) => {
         if (cart.find(item => id === item.id)) {
             setCartInfo(cart.map(item => item.id === id? {...item, quantity: item.quantity + 1 } : item))
+            localStorage.setItem('cart', JSON.stringify(cart.map(item => item.id === id? {...item, quantity: item.quantity + 1 } : item)))
         }
     }
 
     const decreaseQuantity = (id) => {
         if (cart.find(item => id === item.id) && cart.find(item => id === item.id).quantity > 1) {
             setCartInfo(cart.map(item => item.id === id? {...item, quantity: item.quantity - 1 } : item))
+            localStorage.setItem('cart', JSON.stringify(cart.map(item => item.id === id? {...item, quantity: item.quantity - 1 } : item)))
         } else if (cart.find(item => id === item.id) && cart.find(item => id === item.id).quantity === 1) {
             setCartInfo(cart.filter(item => item.id!== id))
+            localStorage.setItem('cart', JSON.stringify(cart.filter(item => item.id!== id)))
         }
     }
 
     const removeItem = (id) => {
         if (cart.find(item => id === item.id)) {
             setCartInfo(cart.filter(item => item.id!== id))
+            localStorage.setItem('cart', JSON.stringify(cart.filter(item => item.id!== id)))
         }
     }
 
@@ -93,7 +104,7 @@ export default function Cart () {
                 <div className="offcanvas-Footer bcgrey">
                     <div className="row">
                         <div className="d-grid gap-6 col-12">
-                            <button type="button" className="btn btn-primary space">Checkout - {cartTotal}</button>
+                            <button type="button" className="btn btn-primary space">Checkout - {total}</button>
                         </div>
                         <div className="d-grid gap-6 col-12">
                             <button type="button" className="btn btn-secondary space" data-bs-dismiss="offcanvas">Continue Shopping</button>

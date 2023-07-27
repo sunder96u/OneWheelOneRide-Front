@@ -11,6 +11,10 @@ import Trails from './Trails'
 import Login from './Login'
 import CreateAccount from './CreateAccount'
 import Cart from './Cart'
+import CommentModal from './newCommentModal'
+import TrailReviewModal from './newTrailReviewModal'
+import ProductReviewModal from './newProductReviewModal'
+
 
 
 

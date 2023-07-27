@@ -1,13 +1,38 @@
+import { Link, useNavigate } from 'react-router-dom'
+import logo from '../assets/wheelride.gif'
+import cart from '../assets/icons8-cart-60.png'
+import login from '../assets/icons8-login-96.png'
+import logout from '../assets/icons8-logout-100.png'
 
-
-import { Link } from 'react-router-dom'
 
 export default function Header () {
+
+    const navigate = useNavigate()
+
+    let login 
+    if (localStorage.getItem('token')) { 
+        login = 
+        <img src={logout} alt="logout" onClick={() => goLogin()} className="iconSml"/>
+    } else {
+        login = 
+        <img src={login} alt="login" onClick={() => goLogin()} className="iconSml"/>
+    }
+
+    const goLogin = () => {
+        navigate("/Login")
+    }
+
+    const goLogout = () => {
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
+        navigate("/")
+    }
 
 
     return (
         <nav className="navbar sticky-top navbar-expand-lg white">
             <div className="container-fluid">
+                <img src={logo} className="navbar-brand img-fluid logo" alt="OneWheel OneRide"/>
                 <Link className="navbar-brand" to="/">OneWheel OneRide</Link>
                 <button className="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -33,10 +58,11 @@ export default function Header () {
                         </ul>
                     </li>
                     <li>
-                        <button>Log-in</button>
+                        {login}
                     </li>
                     <li>
-                        <button className="btn btn-primary" type="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">Cart</button>
+                        {/* <button className="btn btn-primary" type="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">Cart</button> */}
+                        <img src={cart} alt="Cart" className="offcanvas-cart iconSml" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart"/>
                     </li>
                 </ul>
             </div>
