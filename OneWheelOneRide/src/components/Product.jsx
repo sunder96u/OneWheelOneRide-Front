@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Context from '../Context'
 import CreateReview from '../components/newProductReviewModal'
+import EditReview from './editProductReviewModal'
 
 
 export default function Products () {
@@ -11,6 +12,7 @@ export default function Products () {
     const [product, setProduct] = useState([])
     const [reviews, setReviews] = useState([])
     const [openModal, setOpenModal] = useState(false)
+    const [openEditModal, setOpenEditModal] = useState(false)
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
     const [rating, setRating] = useState(0)
     let key = useParams()
@@ -26,7 +28,7 @@ export default function Products () {
         if (user.id === reviews[i].user_id) {
             myReview =
             <div>
-                <button>Edit</button>
+                <button onClick={() => setOpenEditModal(true)}>Edit</button>
                 <button onClick={() => onXClick(reviews[i].id)}>X</button>
             </div>
         }
@@ -60,6 +62,7 @@ export default function Products () {
                             <div className="card-body">
                                 <h5 className="card-title">{review.rating} out of 5</h5>
                                 <p className="card-text">{review.review}</p>
+                                <EditReview open={openEditModal} onClose={() => setOpenEditModal(false)} reviews={review} product={product} />
                             </div>
                         </div>
                     )

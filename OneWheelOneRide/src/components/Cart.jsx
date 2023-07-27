@@ -9,12 +9,6 @@ export default function Cart () {
     const { cart, setCartInfo } = useContext(Context)
     const { user, setUserInfo } = useContext(Context)
     const [total, setTotal] = useState(0)
-    
-    useEffect(() => {
-        if(localStorage.getItem('cart')){
-            setCartInfo(JSON.parse(localStorage.getItem('cart')))
-        }
-    }, [])
 
     const increaseQuantity = (id) => {
         if (cart.find(item => id === item.id)) {
@@ -39,6 +33,21 @@ export default function Cart () {
             localStorage.setItem('cart', JSON.stringify(cart.filter(item => item.id!== id)))
         }
     }
+    
+    useEffect(() => {
+        if(localStorage.getItem('cart')){
+            setCartInfo(JSON.parse(localStorage.getItem('cart')))
+        }
+        for (let i = 0; i < cart.length; i++) {
+            let myTotal = 0
+            let itemTotal = 0
+            itemTotal = cart[i].price * cart[i].quantity
+            myTotal = myTotal + itemTotal
+            setTotal(myTotal)
+            // setTotal(cart[i].price * cart[i].quantity)
+        }
+    }, [])
+
 
     if (cart.length === 0) {
         return (
@@ -86,7 +95,7 @@ export default function Cart () {
                                                 <button type="button" className="btn btn-primary" onClick={() => increaseQuantity(item.id)}>+</button>
                                             </div>
                                             <div className="col-6">
-                                                <p>${item.price * item.quantity}</p>
+                                                <p>${(item.price * item.quantity).toFixed(2)}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +113,7 @@ export default function Cart () {
                 <div className="offcanvas-Footer bcgrey">
                     <div className="row">
                         <div className="d-grid gap-6 col-12">
-                            <button type="button" className="btn btn-primary space">Checkout - {total}</button>
+                            <button type="button" className="btn btn-primary space">Checkout</button>
                         </div>
                         <div className="d-grid gap-6 col-12">
                             <button type="button" className="btn btn-secondary space" data-bs-dismiss="offcanvas">Continue Shopping</button>

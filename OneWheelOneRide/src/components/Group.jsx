@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import CreateGroupComment from './newCommentModal'
+import EditComment from './editCommentModal'
 
 import axios from 'axios'
 
@@ -10,6 +11,7 @@ export default function Group () {
     const navigate = useNavigate()
     const { id } = useParams()
     const [openModal, setOpenModal] = useState(false)
+    const [openEditModal, setOpenEditModal] = useState(false)
     const [comments, setComments] = useState([])
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
@@ -22,7 +24,7 @@ export default function Group () {
         if (user.id === comments[i].id) {
             myReview =
             <div>
-                <button>Edit</button>
+                <button onClick={() => setOpenEditModal(true)} >Edit</button>
                 <button onClick={() => onXClick(comments[i].id)}>X</button>
             </div>
         }
@@ -58,6 +60,7 @@ export default function Group () {
                         {myReview}
                         <div className="card-body">
                             <h5 className="card-title">{comment.comment}</h5>
+                            <EditComment myComment={comment} group={group} open={openEditModal} onClose={() => setOpenEditModal(false)} />
                         </div>
                     </div>
                 )

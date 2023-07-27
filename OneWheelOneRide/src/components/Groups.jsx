@@ -7,13 +7,16 @@ import { useNavigate } from 'react-router-dom'
 export default function Groups () {
 
     const [groups, setGroups] = useState([])
+    const [searchInput, setSearchInput] = useState('')
     const navigate = useNavigate()
+
 
     useEffect(() => {
         const getGroups = async () => {
             const response = await axios.get('https://onewheeloneride-back.up.railway.app/groups')
             setGroups(response.data)
         }
+
         getGroups()
     }, [])
 
@@ -29,11 +32,11 @@ export default function Groups () {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-12">
+                    {/* <div className="col-md-12">
                         <h1>Groups</h1>
-                        <input type="text" className="form-control col-8" placeholder="Search Groups" />
+                        <input type="text" className="form-control col-8" placeholder="Search Groups"/>
                         <button type="button" className="btn btn-primary">Search</button>
-                    </div>
+                    </div> */}
                     <div className="col-md-12">
                         <div className="container-fluid bcgrey">
                             <div className="col-12">

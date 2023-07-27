@@ -31,7 +31,7 @@
 
   .main {
     position: relative;
-    top: 100px;
+    top: 150px;
   }
 
   .navbar {
@@ -54,6 +54,11 @@
     max-height: 125px;
   }
 
+  .iconSml {
+    max-width: 50px;
+    max-height: 75px;
+  }
+
   .iconLrg {
     max-width: 275px;
     max-height: 275px;
@@ -68,6 +73,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .cardReview {
+    max-width: 300px;
+    background-color: #261940;
+    color: white
   }
 
   .bcgrey {
@@ -93,4 +104,12 @@
 
   .maxHeight {
     max-height: 100px;
+  }
+
+  .invalid { 
+    color: firebrick;
+  }
+
+  .logo {
+    max-width: 300px;
   }

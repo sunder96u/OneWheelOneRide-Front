@@ -8,10 +8,11 @@ import Context from './Context'
 function App() {
 
   const [cart, setCartInfo] = useState([])
+  const [user, setUserInfo] = useState([])
 
   return (
     <div>
-      <Context.Provider value={{ cart, setCartInfo}}>
+      <Context.Provider value={{ cart, setCartInfo, user, setUserInfo}}>
         <Header />
         <Main />
       </Context.Provider>

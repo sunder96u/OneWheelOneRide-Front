@@ -18,7 +18,7 @@ export default function newTrailReviewModal ({open, onClose, trail}) {
         e.preventDefault()
         setUserInfo(JSON.parse(localStorage.getItem('user')))
         const newcomment = await axios.post('https://onewheeloneride-back.up.railway.app/createtrailreview', {
-            reviews: review,
+            review: review,
             rating: rating,
             user_id: user.id,
             trail_id: trail.id
