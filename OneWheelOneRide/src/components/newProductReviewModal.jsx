@@ -1,7 +1,6 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import Context from '../Context'
 import { Modal, Button } from 'react-bootstrap'
 
 export default function newProductReviewModal ({open, onClose, product}) {
