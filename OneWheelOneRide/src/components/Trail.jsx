@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import CreateReview from './newTrailReviewModal'
+import EditReview from './editTrailReviewModal'
 
 import axios from 'axios'
 
@@ -10,12 +11,17 @@ export default function Trail () {
     const navigate = useNavigate()
     const { id } = useParams()
     const [openModal, setOpenModal] = useState(false)
+    const [openEditModal, setOpenEditModal] = useState(false)
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
     const [reviews, setReviews] = useState([])
+    const [searchInput, setSearchInput] = useState('')
+
 
     let addReview
     let allreviews
     let myReview
+
+    const searchBar = () => {}
 
     if (localStorage.getItem('token')) {
             addReview = <button onClick={() => setOpenModal(true)}>Add Review</button>
@@ -25,7 +31,7 @@ export default function Trail () {
         if (user.id === reviews[i].user_id) {
             myReview =
             <div>
-                <button>Edit</button>
+                <button onClick={() => setOpenEditModal(true)}>Edit</button>
                 <button onClick={() => onXClick(reviews[i].id)}>X</button>
             </div>
         }
@@ -58,6 +64,7 @@ export default function Trail () {
                         <div className='card-body'>
                             <h5 className='card-title'>Difficulty: {review.rating}</h5>
                             <p className='card-text'>{review.review}</p>
+                            <EditReview myReview={review} trail={trails} open={openEditModal} onClose={() => setOpenEditModal(false)} />
                         </div>
                     </div>
                 )
