@@ -1,7 +1,5 @@
-import { useState, useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Context from '../Context'
 import { Modal, Button } from 'react-bootstrap'
 
 export default function newTrailReviewModal ({open, onClose, trail}) {

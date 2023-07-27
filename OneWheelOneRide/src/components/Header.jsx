@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/wheelride.gif'
 import cart from '../assets/icons8-cart-60.png'
-import login from '../assets/icons8-login-96.png'
+import loginIcon from '../assets/icons8-login-96.png'
 import logout from '../assets/icons8-logout-100.png'
 
 
@@ -15,7 +15,7 @@ export default function Header () {
         <img src={logout} alt="logout" onClick={() => goLogin()} className="iconSml"/>
     } else {
         login = 
-        <img src={login} alt="login" onClick={() => goLogin()} className="iconSml"/>
+        <img src={loginIcon} alt="login" onClick={() => goLogin()} className="iconSml"/>
     }
 
     const goLogin = () => {

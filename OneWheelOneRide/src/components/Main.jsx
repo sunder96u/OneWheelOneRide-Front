@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import Home from './Home'
 import Category from './Category'
 import Group from './Group'
@@ -11,9 +11,7 @@ import Trails from './Trails'
 import Login from './Login'
 import CreateAccount from './CreateAccount'
 import Cart from './Cart'
-import CommentModal from './newCommentModal'
-import TrailReviewModal from './newTrailReviewModal'
-import ProductReviewModal from './newProductReviewModal'
+
 
 
 

@@ -1,5 +1,5 @@
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import { useState, useContext, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import Carousel from 'better-react-carousel'
 import axios from 'axios'
 
