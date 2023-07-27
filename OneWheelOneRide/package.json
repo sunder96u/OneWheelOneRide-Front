@@ -1,9 +1,10 @@
 {
   "name": "onewheeloneride",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
