@@ -1,6 +1,7 @@
 {
   "name": "onewheeloneride",
   "private": true,
+  "homepage": "https://sunder96u.github.io/OneWheelOneRide-Front/",
   "version": "0.0.2",
   "type": "module",
   "scripts": {
