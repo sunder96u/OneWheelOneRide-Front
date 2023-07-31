@@ -49,13 +49,6 @@ export default function Login () {
                         <p className="invalid" style={{display: error? "": "none"}}>Username or password is incorrect. Please try again!</p>
                     </div>
                 </form>
-
-                {/* <div className="mb-3">
-                    <p>OR</p>
-                </div>
-                <div>
-                    <button type="btn" className="btn btn-primary">Login with Google</button>
-                </div> */}
                 <div className="mb-3">
                     <p>New Here? <Link to="/CreateAccount">Create an Account</Link></p>
                 </div>

@@ -1,7 +1,6 @@
 {
   "name": "onewheeloneride",
-  "private": false,
-  "homepage": "https://sunder96u.github.io/OneWheelOneRide-Front/",
+  "private": true,
   "version": "0.0.2",
   "type": "module",
   "scripts": {
@@ -18,6 +17,7 @@
     "@tanstack/react-query": "^4.32.0",
     "axios": "^1.4.0",
     "better-react-carousel": "^1.1.1",
+    "bootstrap": "^5.3.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
