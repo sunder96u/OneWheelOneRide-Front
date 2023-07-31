@@ -26,7 +26,7 @@ export default function Main () {
         <div className="container-fluid main">
             <Cart />
             <Routes>
-                <Route path="/" element={<Home />}/>
+                <Route exact path="/" element={<Home />}/>
                 <Route path="/OneWheelOneRide-Front" element={<Home />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/CreateAccount" element={<CreateAccount />} />
