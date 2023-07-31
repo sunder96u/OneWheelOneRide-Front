@@ -12,7 +12,7 @@ export default function Header () {
     let login 
     if (localStorage.getItem('token')) { 
         login = 
-        <img src={logout} alt="logout" onClick={() => goLogin()} className="iconSml"/>
+        <img src={logout} alt="logout" onClick={() => goLogout()} className="iconSml"/>
     } else {
         login = 
         <img src={loginIcon} alt="login" onClick={() => goLogin()} className="iconSml"/>

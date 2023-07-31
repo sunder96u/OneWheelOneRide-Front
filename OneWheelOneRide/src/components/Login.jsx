@@ -1,7 +1,6 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
-import Context from '../Context'
 
 
 
@@ -10,7 +9,6 @@ export default function Login () {
         const [email, setEmail] = useState('')
         const [password, setPassword] = useState('')
         const [error, setError] = useState(false)
-        const { user, setUserInfo } = useContext(Context)
         const navigate = useNavigate()
 
         const finduser = async (e) => {
@@ -19,7 +17,6 @@ export default function Login () {
                if ( user.data[i].email === email && user.data[i].password === password ) {
                 localStorage.setItem('user', JSON.stringify(user.data[i]))
                 localStorage.setItem('token', user.data[i].token)
-                setUserInfo(user.data[i])
                 setEmail('')
                 setPassword('')
                 navigate('/')  
