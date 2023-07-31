@@ -29,6 +29,7 @@ export default function Main () {
                 <Route exact path="/" element={<Home />}/>
                 <Route path="/OneWheelOneRide-Front" element={<Home />} />
                 <Route path="/Login" element={<Login />} />
+                <Route path="/OneWheelOneRide-Front/Login" element={<Login />} />
                 <Route path="/CreateAccount" element={<CreateAccount />} />
                 <Route path="/Category" element={<Category />} />
                 <Route path="/Group/:id" element={<Group />} />

@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/OneWheelOneRide-Front",
+  base: "/OneWheelOneRide-Front/",
   plugins: [react()],
   output: {
     interop: 'auto'
