@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "/OneWheelOneRide-Front",
   plugins: [react()],
+  resolve: {
+    alias: {
+      '~/boostrap': path.resolve(__dirname, './src/bootstrap'),
+    }
+  }
 })
