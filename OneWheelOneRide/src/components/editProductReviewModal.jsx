@@ -16,8 +16,6 @@ export default function newProductReviewModal ({open, onClose, reviews, product}
         setRating(reviews.rating)
     }, [])
 
-    console.log(reviews)
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         const editreview = await axios.put(`https://onewheeloneride-back.up.railway.app/productreviews/${reviews.id}`, {
