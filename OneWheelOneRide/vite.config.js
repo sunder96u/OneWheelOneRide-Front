@@ -6,7 +6,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "/OneWheelOneRide-Front/",
   plugins: [react()],
-  output: {
-    interop: 'auto'
+  build: {
+    rollupOptions: {
+      output: {
+        interop: 'auto'
+      }
+    }
   }
+
 })

@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import Home from './Home'
-import Category from './Category'
 import Group from './Group'
 import Groups from './Groups'
 import Parts from './Parts'
@@ -31,7 +30,6 @@ export default function Main () {
                 <Route path="/Login" element={<Login />} />
                 <Route path="/OneWheelOneRide-Front/Login" element={<Login />} />
                 <Route path="/CreateAccount" element={<CreateAccount />} />
-                <Route path="/Category" element={<Category />} />
                 <Route path="/Group/:id" element={<Group />} />
                 <Route path="/Groups" element={<Groups />} />
                 <Route path="/Parts/:name" element={<Parts model={Model} />} />
