@@ -25,16 +25,16 @@ export default function Trail () {
 
     if (localStorage.getItem('token')) {
             addReview = <button onClick={() => setOpenModal(true)}>Add Review</button>
-    }
 
-    for (let i = 0; i < reviews.length; i++) {
-        if (user.id === reviews[i].user_id) {
-            myReview =
-            <div>
-                <button onClick={() => setOpenEditModal(true)}>Edit</button>
-                <button onClick={() => onXClick(reviews[i].id)}>X</button>
-            </div>
-        }
+            for (let i = 0; i < reviews.length; i++) {
+                if (user.id === reviews[i].user_id) {
+                    myReview =
+                    <div>
+                        <button onClick={() => setOpenEditModal(true)}>Edit</button>
+                        <button onClick={() => onXClick(reviews[i].id)}>X</button>
+                    </div>
+                }
+            }
     }
 
     useEffect(() => {

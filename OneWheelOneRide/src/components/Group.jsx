@@ -20,19 +20,19 @@ export default function Group () {
     let joinGroup
     let myReview
 
-    for (let i = 0; i < comments.length; i++) {
-        if (user.id === comments[i].id) {
-            myReview =
-            <div>
-                <button onClick={() => setOpenEditModal(true)} >Edit</button>
-                <button onClick={() => onXClick(comments[i].id)}>X</button>
-            </div>
-        }
-    }
-
 
     if (localStorage.getItem('token')) {
         addComment = <button onClick={() => setOpenModal(true)}>Add Comment</button>
+
+        for (let i = 0; i < comments.length; i++) {
+            if (user.id === comments[i].id) {
+                myReview =
+                <div>
+                    <button onClick={() => setOpenEditModal(true)} >Edit</button>
+                    <button onClick={() => onXClick(comments[i].id)}>X</button>
+                </div>
+            }
+        }
     }
 
     useEffect(() => {
