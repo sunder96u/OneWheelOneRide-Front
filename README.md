@@ -3,7 +3,7 @@
 <br />
 <div align="center">
     <a href="https://github.com/sunder96u/OneWheelOneRide-Front">
-        <img src="http://localhost:5173/OneWheelOneRide-Front/src/assets/wheelride.gif" alt="logo" width="120" height="80">
+        <img src="/src/assets/wheelride.gif" alt="logo" width="120" height="80">
     </a>
 
 <h3 align="center">OneWheelOneRide</h3>
