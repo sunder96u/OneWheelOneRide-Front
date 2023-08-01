@@ -7,15 +7,4 @@ import { resolve } from 'path'
 export default defineConfig({
   base: "/OneWheelOneRide-Front/",
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html')
-      },
-      output: {
-        interop: 'auto'
-      }
-    }
-  }
-
 })
